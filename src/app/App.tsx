@@ -475,10 +475,12 @@ function ProjectCard({
   project,
   onClick,
   className = "",
+  imageLoading = "lazy",
 }: {
   project: Project;
   onClick: () => void;
   className?: string;
+  imageLoading?: "lazy" | "eager";
 }) {
   return (
     <button
@@ -491,7 +493,9 @@ function ProjectCard({
           src={project.cover}
           alt={project.title}
           className="card-img absolute inset-0 w-full h-full object-cover"
-          loading="lazy"
+          loading={imageLoading}
+          fetchPriority={imageLoading === "eager" ? "high" : undefined}
+          decoding="async"
         />
       </div>
       <div className="glass-overlay absolute inset-0" />
@@ -561,7 +565,14 @@ function ProjectDetail({ project, onClose }: { project: Project; onClose: () => 
 
       {/* Hero */}
       <div className="relative h-[90vh] overflow-hidden">
-        <img src={project.heroImage ?? project.images[0]} alt={project.title} className="absolute inset-0 w-full h-full object-cover" />
+        <img
+          src={project.heroImage ?? project.images[0]}
+          alt={project.title}
+          className="absolute inset-0 w-full h-full object-cover"
+          loading="eager"
+          fetchPriority="high"
+          decoding="async"
+        />
         <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(6,6,10,0.2) 0%, rgba(6,6,10,0.15) 50%, rgba(6,6,10,0.88) 100%)" }} />
         <div className="absolute inset-0 opacity-30" style={{ background: `radial-gradient(ellipse at 20% 80%, ${project.accentColor}44 0%, transparent 55%)` }} />
 
@@ -666,6 +677,7 @@ function ProjectDetail({ project, onClose }: { project: Project; onClose: () => 
               className="w-full block"
               style={{ height: "auto" }}
               loading="lazy"
+              decoding="async"
             />
           </motion.div>
         ))}
@@ -953,7 +965,7 @@ function ProjectsGrid({ onProjectClick }: { onProjectClick: (p: Project) => void
       {/* Row 1 — 6/6 */}
       <div className="grid grid-cols-12 gap-1 mb-1">
         <div className="col-span-12 lg:col-span-6 h-[500px]">
-          <ProjectCard project={PROJECTS[0]} onClick={() => onProjectClick(PROJECTS[0])} className="h-full" />
+          <ProjectCard project={PROJECTS[0]} onClick={() => onProjectClick(PROJECTS[0])} className="h-full" imageLoading="eager" />
         </div>
         <div className="col-span-12 lg:col-span-6 h-[500px]">
           <ProjectCard project={PROJECTS[1]} onClick={() => onProjectClick(PROJECTS[1])} className="h-full" />
@@ -1087,16 +1099,14 @@ export default function App() {
   const workRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const urls: string[] = [];
-    PROJECTS.forEach((p) => {
-      urls.push(p.cover);
-      if (p.heroImage) urls.push(p.heroImage);
-      p.images.forEach((img) => urls.push(img));
-    });
-    urls.forEach((src) => {
-      const img = new Image();
-      img.src = src;
-    });
+    const link = document.createElement("link");
+    link.rel = "preload";
+    link.as = "image";
+    link.href = PROJECTS[0].cover;
+    document.head.appendChild(link);
+    return () => {
+      document.head.removeChild(link);
+    };
   }, []);
 
   const scrollToWork = () => {
