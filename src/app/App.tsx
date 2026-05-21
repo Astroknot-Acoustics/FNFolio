@@ -6,17 +6,22 @@ import ddrobotecThumb from "../imports/ddrobotec-thumb-2.png";
 import ddrobotecHero from "../imports/health.jpg";
 import ddrobotec1 from "../imports/DD_1-min-1.png";
 import ddrobotec2 from "../imports/DD_2-min-1.png";
-import sunriseThumb from "../imports/sunrise-thumb.png";
-import sunriseHero from "../imports/Sunrise_1.png";
-import sunrise2 from "../imports/Sunrise_2-1.png";
+import sunriseThumb from "../imports/Sunrise-thumb.jpg";
+import sunriseHero from "../imports/Sunrise-thumb.jpg";
+import sunrise2 from "../imports/Sunrise_2.png";
 import sunrise3 from "../imports/Sunrise_3.png";
 import sunrise5 from "../imports/UX_sunrise_5.jpg";
 import meierToblerThumb from "../imports/meier_tobler_-_thumb.png";
 import meierToblerHero from "../imports/MT_-_Cover1.jpg";
-import meierTobler1 from "../imports/MT_1.png";
-import meierTobler2 from "../imports/MT_2.png";
-import kidsappThumb from "../imports/kidsapp_-_thumb.png";
+import meierTobler1 from "../imports/MT_1.jpg";
+import meierTobler2 from "../imports/MT_2.jpg";
+import kidsappThumb from "../imports/VUkids-thumb.png";
+import kidsappHero from "../imports/VUkids-hero.jpg";
+import kidsapp1 from "../imports/VUkids1.jpg";
 import virginKidsThumb from "../imports/virgin_kids_-_thumb-1.png";
+import virginKidsHero from "../imports/VM kids 0.png";
+import virginKids1 from "../imports/VM kids 1.png";
+import virginKids2 from "../imports/VM kids 2.png";
 import twentyMinThumb from "../imports/20_min_-_thumb.jpg";
 import twentyMinHero from "../imports/20min_1.jpg";
 import twentyMin2 from "../imports/20min_2.jpg";
@@ -24,8 +29,19 @@ import twentyMin3 from "../imports/20min_3.jpg";
 import twentyMin4 from "../imports/20min_4.jpg";
 import twentyMin5 from "../imports/20min_5.jpg";
 import virginStoreThumb from "../imports/virgin_store_-_thumb-1.png";
+import virginStoreHero from "../imports/VMstore1.png";
+import virginStore1 from "../imports/VMstore2.png";
+import virginStore2 from "../imports/VMstore3.png";
+import virginStore3 from "../imports/VMstore4.png";
 import weatherAlarmThumb from "../imports/weather_alarm_-_thumb.jpg";
-import gmgThumb from "../imports/gmg_-_thumb.jpg";
+import weatherAlarmHero from "../imports/weather_alarm_-_thumb.jpg";
+import weatherAlarm1 from "../imports/WA-1.jpg";
+import weatherAlarm2 from "../imports/WA-2.jpg";
+import weatherAlarm3 from "../imports/WA-3.jpg";
+import weatherAlarm4 from "../imports/WA-4.png";
+import zolokalThumb from "../imports/zolokal-thumb.png";
+import zolokalHero from "../imports/zolokal-thumb.png";
+import zolokal1 from "../imports/zolokal1.jpg";
 
 const GLOBAL_CSS = `
   @keyframes orb-a {
@@ -67,6 +83,7 @@ const GLOBAL_CSS = `
     from { transform: scaleX(0); }
     to   { transform: scaleX(1); }
   }
+  html { scroll-behavior: smooth; }
   ::-webkit-scrollbar { display: none; }
   * { scrollbar-width: none; }
   .font-display { font-family: 'Barlow Condensed', sans-serif; }
@@ -192,11 +209,8 @@ const PROJECTS: Project[] = [
     role: "Lead Product Designer",
     tags: ["OTT", "Gamification", "Children", "Accessibility"],
     cover: kidsappThumb,
-    images: [
-      "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=1600&h=1000&fit=crop&auto=format",
-      "https://images.unsplash.com/photo-1578270634534-f50b47e73b1a?w=1600&h=1000&fit=crop&auto=format",
-      "https://images.unsplash.com/photo-1545558014-8692077e9b5c?w=1600&h=900&fit=crop&auto=format",
-    ],
+    heroImage: kidsappHero,
+    images: [kidsapp1],
     overview:
       "Discovery challenged us to reimagine how children aged 4–10 discover and engage with educational content. We built a gamified ecosystem where watching unlocks achievements, exploration is rewarded, and parents have full transparency — without the dark patterns common in kids' apps. The experience earned a 91% parent approval rating in usability testing.",
     accentColor: "#FF6B6B",
@@ -204,18 +218,15 @@ const PROJECTS: Project[] = [
   {
     id: "virgin-tv-kids",
     title: "VIRGIN TV KIDS",
-    subtitle: "Children's 10ft Entertainment",
-    category: "TV Platform",
+    subtitle: "Children's Entertainment",
+    category: "Mobile App",
     year: "2019",
     client: "Virgin Media",
     role: "Senior UX Designer",
-    tags: ["10ft UI", "Linear TV", "Children", "Remote Navigation"],
+    tags: ["Android", "IOS", "Children", "Parental Controls"],
     cover: virginKidsThumb,
-    images: [
-      "https://images.unsplash.com/photo-1593784991095-a205069470b6?w=1600&h=900&fit=crop&auto=format",
-      "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=1600&h=1000&fit=crop&auto=format",
-      "https://images.unsplash.com/photo-1585829365295-ab7cd400c167?w=1600&h=900&fit=crop&auto=format",
-    ],
+    heroImage: virginKidsHero,
+    images: [virginKids1, virginKids2],
     overview:
       "Virgin TV Kids required rethinking entertainment for young audiences in the living room context. Working within the constraints of 10-foot UI design and remote control navigation, we built an experience that feels instantly magical to children — with wayfinding so intuitive even 4-year-olds navigate independently — while giving parents confidence through robust parental controls.",
     accentColor: "#FF6B35",
@@ -246,50 +257,42 @@ const PROJECTS: Project[] = [
     role: "UX Designer",
     tags: ["E-Commerce", "TV", "Transactional", "Recommendation"],
     cover: virginStoreThumb,
-    images: [
-      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1600&h=1000&fit=crop&auto=format",
-      "https://images.unsplash.com/photo-1586717799252-bd134ad00e26?w=1600&h=1000&fit=crop&auto=format",
-    ],
+    heroImage: virginStoreHero,
+    images: [virginStore1, virginStore2, virginStore3],
     overview:
       "Virgin Media Store is the digital marketplace for buying and renting movies and TV shows. We redesigned the complete purchase experience — from content discovery through post-purchase — reducing checkout abandonment by 31% while building a recommendation engine UI that surfaces the right title at the right moment.",
     accentColor: "#C77DFF",
   },
   {
-    id: "glutz",
-    title: "GLUTZ",
-    subtitle: "Smart Access Control System",
-    category: "IoT Design",
+    id: "weather-alarm",
+    title: "WEATHER ALARM",
+    subtitle: "Smart App",
+    category: "Product Design",
     year: "2024",
-    client: "Glutz AG",
-    role: "Lead Product Designer",
-    tags: ["Smart Lock", "Access", "B2B", "Security"],
+    client: "Weather Alarm",
+    role: "Senior Product Designer",
+    tags: ["Alarm", "Location", "B2C", "Weather"],
     cover: weatherAlarmThumb,
-    images: [
-      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&h=1000&fit=crop&auto=format",
-      "https://images.unsplash.com/photo-1508739773434-c26b3d09e071?w=1600&h=1000&fit=crop&auto=format",
-      "https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?w=1600&h=900&fit=crop&auto=format",
-    ],
+    heroImage: weatherAlarmHero,
+    images: [weatherAlarm1, weatherAlarm2, weatherAlarm3, weatherAlarm4],
     overview:
-      "Glutz AG is one of Switzerland's premier access control manufacturers. We redesigned their complete digital ecosystem — from door unit interface to building manager dashboard — creating a unified design system that communicates trust, precision, and seamless connectivity. Swiss precision engineering, expressed through software.",
+      "The multiple award winning Weather-Alarm app is Switzerland's top choice for weather updates, boasting over 2M downloads and a thriving global user community. Its USP is to reliably warn of adverse weather conditions such as hail, thunderstorms and more, aiding users in safeguarding themselves, loved ones, and property.",
     accentColor: "#4CC9F0",
   },
   {
-    id: "green-man-gaming",
-    title: "GREEN MAN GAMING",
-    subtitle: "PC Gaming Marketplace",
+    id: "zolokal",
+    title: "ZOLOKAL",
+    subtitle: "Online Marketplace",
     category: "E-Commerce",
-    year: "2017",
-    client: "Green Man Gaming",
-    role: "UX/UI Designer",
-    tags: ["Gaming", "E-Commerce", "Mobile", "Catalog"],
-    cover: gmgThumb,
-    images: [
-      "https://images.unsplash.com/photo-1759661881353-5b9cc55e1cf4?w=1600&h=1000&fit=crop&auto=format",
-      "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=1600&h=1000&fit=crop&auto=format",
-      "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=1600&h=900&fit=crop&auto=format",
-    ],
+    year: "2018",
+    client: "Zolokal",
+    role: "Web Designer",
+    tags: ["Clothing", "E-Commerce", "Mobile", "Catalog"],
+    cover: zolokalThumb,
+    heroImage: zolokalHero,
+    images: [zolokal1],
     overview:
-      "Green Man Gaming needed a mobile experience that competes with Steam while preserving their distinctive personality. We built a system that balances high-density catalog browsing with personalized discovery — price alerts, wishlists, social recommendations — all optimized for quick purchase decisions in a gaming mindset.",
+      "Zolokal is a web-based local marketplace connecting nearby shops with consumers through a simple, accessible e-commerce experience. I worked on the project from brand concept and UX exploration through to Ul design and responsive layouts, defining both structure and interface direction. The design approach was inspired by clean, functional Danish design principles - focusing on clarity, minimalism, and usability - while exploring how to reduce friction for small businesses entering online commerce ano create a scalable, user-friendly marketplace experience.",
     accentColor: "#06D6A0",
   },
 ];
@@ -725,9 +728,12 @@ function Nav({ onLogoClick, onContactClick }: { onLogoClick: () => void; onConta
         SILVERTONGUE
       </button>
       <div className="hidden md:flex items-center gap-8">
-        {["Work", "About"].map((item) => (
-          <a key={item} href="#" className="font-mono text-[11px] tracking-[0.2em] uppercase text-muted-foreground hover:text-foreground transition-colors duration-200">
-            {item}
+        {[
+          { label: "Work", href: "#work" },
+          { label: "About", href: "#about" },
+        ].map((item) => (
+          <a key={item.label} href={item.href} className="font-mono text-[11px] tracking-[0.2em] uppercase text-muted-foreground hover:text-foreground transition-colors duration-200">
+            {item.label}
           </a>
         ))}
         <button
@@ -993,7 +999,7 @@ function ProjectsGrid({ onProjectClick }: { onProjectClick: (p: Project) => void
 // ─── About ────────────────────────────────────────────────────────────────────
 function About({ onContactClick }: { onContactClick: () => void }) {
   return (
-    <section className="px-6 md:px-10 py-24 border-t border-border">
+    <section id="about" className="px-6 md:px-10 py-24 border-t border-border">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-20">
         <div className="md:col-span-4">
           <div className="flex items-center gap-3 mb-6">
@@ -1004,17 +1010,26 @@ function About({ onContactClick }: { onContactClick: () => void }) {
             className="font-display font-black text-foreground tracking-tighter leading-none"
             style={{ fontSize: "clamp(2.5rem, 5vw, 4rem)", letterSpacing: "0.01em" }}
           >
-            DESIGNING<br />
-            <span style={{ WebkitTextStroke: "1px rgba(240,237,230,0.35)", color: "transparent" }}>COMPLEX</span><br />
-            SYSTEMS.
+            CRAFTING<br />
+            <span style={{ WebkitTextStroke: "1px rgba(240,237,230,0.35)", color: "transparent" }}>MEANINGFUL</span><br />
+            PRODUCTS.
           </h2>
         </div>
         <div className="md:col-span-8 flex flex-col justify-center gap-6">
           <p className="font-body font-light text-foreground/70 leading-relaxed" style={{ fontSize: "clamp(1rem, 1.4vw, 1.2rem)" }}>
-            I design digital products that live at the intersection of complexity and clarity. From industrial robotics interfaces and HVAC control systems to streaming platforms serving millions — I bring systems thinking, deep user empathy, and rigorous craft to every engagement.
+            I am a Senior Lead Designer with a career focused on the intersection of high-fidelity visual design and complex product logic. My experience spans the full digital spectrum—from web and mobile to the specialized constraints of 10-foot UI for Smart TV.
+            I specialize in creating polished, intuitive interfaces for global brands, ensuring that brand identity is maintained across every user state and device. While my core is in Visual and UI Design, I bring a strong strategic understanding of UX principles to ensure every interaction serves a clear project goal. <br /> <br />
+
+            My Approach to Modern Design:
+            Production-Ready UI: I focus on building clean, organized design assets that bridge the gap between creative intent and technical implementation. I am adept at working within and contributing to established design systems to ensure consistency at scale.
+            Technical Partnership: I pride myself on a "developer-first" handoff process, collaborating closely with engineering teams to ensure visual precision is maintained from mock-up to the final live product. <br /> <br />
+
+            AI-Enhanced Workflows: I am actively integrating modern, AI-assisted prototyping and deployment workflows into my process, allowing for faster iteration without sacrificing the human-centered quality and aesthetic polish that automated tools often miss.
+            Strategic Oversight: Experienced in managing complex user flows and feature dependencies, I ensure that the visual direction aligns with broader product strategies and stakeholder expectations. <br /> <br />
+            I thrive in collaborative, cross-functional environments where the goal is to turn sophisticated requirements into seamless, high-impact digital experiences.
           </p>
           <p className="font-body font-light text-muted-foreground leading-relaxed" style={{ fontSize: "clamp(0.95rem, 1.2vw, 1.1rem)" }}>
-            Based in Belgrade. Working with teams across Europe, the UK, and beyond. Currently available for senior design roles and strategic consulting engagements.
+            Based in Belgrade. Working with companies across Europe, Switzerland, the UK, and beyond. Currently available for senior design roles and strategic consulting engagements.
           </p>
           <div className="flex gap-4 pt-2">
             <button
@@ -1040,9 +1055,18 @@ function Footer({ onContactClick }: { onContactClick: () => void }) {
         © 2026 — Senior Product Designer, Belgrade
       </span>
       <div className="flex items-center gap-6">
-        {["Behance", "LinkedIn"].map((item) => (
-          <a key={item} href="#" className="font-mono text-[10px] tracking-[0.15em] uppercase text-muted-foreground hover:text-foreground transition-colors duration-200">
-            {item}
+        {[
+          { label: "Behance", href: "https://www.behance.net/FilipNakic" },
+          { label: "LinkedIn", href: "https://www.linkedin.com/in/fnakic/" },
+        ].map((item) => (
+          <a
+            key={item.label}
+            href={item.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-mono text-[10px] tracking-[0.15em] uppercase text-muted-foreground hover:text-foreground transition-colors duration-200"
+          >
+            {item.label}
           </a>
         ))}
         <button
@@ -1107,7 +1131,7 @@ export default function App() {
               onContactClick={() => setShowContact(true)}
             />
             <Hero onWorkClick={scrollToWork} />
-            <div ref={workRef}>
+            <div id="work" ref={workRef}>
               <ProjectsGrid onProjectClick={setSelectedProject} />
             </div>
             <About onContactClick={() => setShowContact(true)} />
