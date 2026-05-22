@@ -2,10 +2,10 @@ import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { ArrowUpRight, ArrowLeft, ChevronDown, X, Send, Check } from "lucide-react";
 
-import ddrobotecThumb from "../imports/ddrobotec-thumb-2.png";
+import ddrobotecThumb from "../imports/ddrobotec-thumb.png";
 import ddrobotecHero from "../imports/health.jpg";
-import ddrobotec1 from "../imports/DD_1-min-1.png";
-import ddrobotec2 from "../imports/DD_2-min-1.png";
+import ddrobotec1 from "../imports/DD_1-min.png";
+import ddrobotec2 from "../imports/DD_2-min.png";
 import sunriseThumb from "../imports/Sunrise-thumb.jpg";
 import sunriseHero from "../imports/Sunrise-thumb.jpg";
 import sunrise2 from "../imports/Sunrise_2.png";
@@ -42,6 +42,8 @@ import weatherAlarm4 from "../imports/WA-4.png";
 import zolokalThumb from "../imports/zolokal-thumb.png";
 import zolokalHero from "../imports/zolokal-thumb.png";
 import zolokal1 from "../imports/zolokal1.jpg";
+import virginMediaStoreVideo from "../imports/videos/VirginMediaStore.mp4";
+import virginTvKidsVideo from "../imports/videos/Virgin_TV_Kids_App.mp4";
 
 const GLOBAL_CSS = `
   @keyframes orb-a {
@@ -163,7 +165,7 @@ const PROJECTS: Project[] = [
     heroImage: ddrobotecHero,
     images: [ddrobotec1, ddrobotec2],
     overview:
-      "Smart resistance training, precision diagnostics, and digital gaming for optimal health and performance – ddrobotec® all in one solution. ddrobotec® is a technology brand committed to providing ground-breaking, personalized and data-driven health and sports tech to a worldwide customer base. Made in Switzerland.",
+      "DDROBOTEC was about making smart training feel more human. Working with connected fitness machines and performance data, the goal was to create an experience that helps users easily understand their progress, stay motivated, and build consistency through gamified interactions. I worked on the original UX direction and later developed the UI, shaping the product around the brand’s visual identity, tone, and overall experience.",
     accentColor: "#7B5CF0",
   },
   {
@@ -196,7 +198,7 @@ const PROJECTS: Project[] = [
     detailCategory: "Mobile App",
     images: [meierTobler1, meierTobler2],
     overview:
-      "Embark on a journey of comfort with SmartGuard 2.0 and SmartComfort by Meier Tobler. Our innovative app development caters to diverse user personas in the heating industry, including homeowners, property managers, and both internal and external heating installers. From cozy warmth to efficient management, our tailored solutions redefine comfort and control in heating installation and usage.",
+      "SmartGuard 2.0 and SmartComfort were designed to simplify how different users interact with heating systems — from homeowners and property managers to professional installers. The challenge was creating a connected experience that makes system monitoring, setup, and management feel intuitive across very different user needs. My work focused on shaping the UX and UI into a clear, approachable product experience while aligning it with Meier Tobler’s brand and service ecosystem.",
     accentColor: "#4ECDC4",
   },
   {
@@ -228,7 +230,7 @@ const PROJECTS: Project[] = [
     heroImage: virginKidsHero,
     images: [virginKids1, virginKids2],
     overview:
-      "Virgin TV Kids required rethinking entertainment for young audiences in the living room context. Working within the constraints of 10-foot UI design and remote control navigation, we built an experience that feels instantly magical to children — with wayfinding so intuitive even 4-year-olds navigate independently — while giving parents confidence through robust parental controls.",
+      "Virgin TV Kids explored how digital entertainment for children aged 3–7 could feel both playful and safe across mobile and tablet devices. Built around videos, games, customizable character profiles, and parental controls, the experience adapted content and themes to each child while keeping navigation simple and approachable for younger users. I worked on the UX and UI design while collaborating closely with the client to shape the sub-brand, visual language, and illustration style so the experience blended naturally into the wider Virgin ecosystem.",
     accentColor: "#FF6B35",
   },
   {
@@ -260,7 +262,7 @@ const PROJECTS: Project[] = [
     heroImage: virginStoreHero,
     images: [virginStore1, virginStore2, virginStore3],
     overview:
-      "Virgin Media Store is the digital marketplace for buying and renting movies and TV shows. We redesigned the complete purchase experience — from content discovery through post-purchase — reducing checkout abandonment by 31% while building a recommendation engine UI that surfaces the right title at the right moment.",
+      "Virgin Media Store is a digital marketplace for buying and renting movies and TV shows across a wide range of devices. I worked on the UX and UI across the core experience, focusing on making content discovery and purchase feel seamless regardless of platform. Alongside the main storefront, I also designed a separate mode within the app for managing purchased and downloaded content. The redesign improved the end-to-end journey — from discovery through checkout and post-purchase — while introducing a more effective recommendation experience that helps surface relevant titles at the right moment.",
     accentColor: "#C77DFF",
   },
   {
@@ -276,7 +278,7 @@ const PROJECTS: Project[] = [
     heroImage: weatherAlarmHero,
     images: [weatherAlarm1, weatherAlarm2, weatherAlarm3, weatherAlarm4],
     overview:
-      "The multiple award winning Weather-Alarm app is Switzerland's top choice for weather updates, boasting over 2M downloads and a thriving global user community. Its USP is to reliably warn of adverse weather conditions such as hail, thunderstorms and more, aiding users in safeguarding themselves, loved ones, and property.",
+      "Weather-Alarm is a multi-award-winning weather app and Switzerland’s leading platform for reliable weather alerts, with over 2M downloads and a global user base. The product focuses on helping people stay safe by providing timely warnings for severe conditions such as hailstorms, thunderstorms, and other adverse weather events.\n\nMy role focused on improving and evolving the user experience over time — mapping user journeys, identifying friction points, and refining key flows based on user feedback. I worked on the design and iteration of the weather widget, custom user weather alarms, and personalization features, helping make the experience more relevant and useful in everyday use. This included ongoing UX/UI maintenance and refinement to improve clarity, usability, and engagement.",
     accentColor: "#4CC9F0",
   },
   {
@@ -682,6 +684,34 @@ function ProjectDetail({ project, onClose }: { project: Project; onClose: () => 
           </motion.div>
         ))}
       </div>
+
+      {project.id === "virgin-media-store" && (
+        <div className="px-8 py-16 border-t border-border">
+          <div className="max-w-7xl mx-auto w-full">
+            <video
+              src={virginMediaStoreVideo}
+              controls
+              playsInline
+              preload="metadata"
+              className="w-full h-auto block bg-card border border-border"
+            />
+          </div>
+        </div>
+      )}
+
+      {project.id === "virgin-tv-kids" && (
+        <div className="px-8 py-16 border-t border-border">
+          <div className="max-w-7xl mx-auto w-full">
+            <video
+              src={virginTvKidsVideo}
+              controls
+              playsInline
+              preload="metadata"
+              className="w-full h-auto block bg-card border border-border"
+            />
+          </div>
+        </div>
+      )}
 
       {/* Next project */}
       <div className="px-8 py-24 border-t border-border">
