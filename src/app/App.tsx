@@ -204,7 +204,7 @@ const PROJECTS: Project[] = [
     title: "DISCOVERY",
     subtitle: "Gamified Kids App",
     category: "Kids UX",
-    year: "2024",
+    year: "2026",
     client: "Discovery Kids",
     role: "Lead Product Designer",
     tags: ["OTT", "Gamification", "Children", "Accessibility"],
@@ -236,7 +236,7 @@ const PROJECTS: Project[] = [
     title: "20 MINUTEN TV",
     subtitle: "Cross-platform News Streaming",
     category: "Media Design",
-    year: "2024",
+    year: "2026",
     client: "TX Group",
     role: "Lead Product Designer",
     tags: ["Streaming", "News", "Multi-platform", "Live"],
@@ -867,7 +867,7 @@ function Hero({ onWorkClick }: { onWorkClick: () => void }) {
         >
           <div className="h-px w-10 bg-accent opacity-70" />
           <span className="font-mono text-[11px] tracking-[0.25em] uppercase text-muted-foreground">
-            Senior Product Designer — Portfolio 2024
+            UI/UX — Portfolio 2026
           </span>
         </motion.div>
 
