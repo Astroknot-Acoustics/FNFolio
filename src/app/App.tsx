@@ -897,7 +897,7 @@ function Hero({ onWorkClick }: { onWorkClick: () => void }) {
         >
           <div className="h-px w-10 bg-accent opacity-70" />
           <span className="font-mono text-[11px] tracking-[0.25em] uppercase text-muted-foreground">
-            Senior Product Designer — Portfolio 2024
+            UI/UX — Portfolio 2026
           </span>
         </motion.div>
 
